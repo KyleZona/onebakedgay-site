@@ -1,0 +1,109 @@
+<!doctype html>
+<!--
+  HOW TO WRITE A NEW POST
+  1. Copy this file and rename it, e.g. notes/wazuh-on-a-pi.html
+     (lowercase, dashes, no spaces: this becomes the web address).
+  2. Replace everything in [BRACKETS].
+  3. Pick ONE tag class: tag--homelab, tag--github or tag--certs.
+  4. Add a card for it at the top of notes/index.html, and an
+     entry in the activity log on projects.html.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>[NOTE TITLE] — OneBakedGay</title>
+  <meta name="description" content="[One-sentence summary of what this post covers.]">
+  <link rel="icon" href="../assets/img/ky-cam.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;700&display=swap">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/notes.css">
+</head>
+<body class="notes-page">
+
+  <header class="site-header">
+    <a class="logo" href="../index.html"><img src="../assets/img/obg-logo-white.png" alt="OneBakedGay home"></a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="../index.html">HOME</a>
+      <a href="../projects.html" aria-current="page">SIDE PROJECTS</a>
+      <a href="../about.html">ABOUT</a>
+      <a class="btn btn--pink" href="https://www.tiktok.com/">WATCH LIVE</a>
+    </nav>
+  </header>
+
+  <main>
+    <article class="post">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="../projects.html">Side Projects</a><span>/</span><a href="index.html">Notes</a><span>/</span><span aria-current="page">[NOTE TITLE]</span>
+      </nav>
+
+      <!-- GREY TITLE TILE -->
+      <header class="post__head">
+        <span class="tag tag--homelab">HOME LAB</span>
+        <h1 class="post__title">[NOTE TITLE]</h1>
+        <p class="post__summary">[One-sentence summary of what this post covers.]</p>
+        <div class="byline">
+          <img src="../assets/img/ky-cam.png" alt="">
+          <div><b>Ky · OneBakedGay</b><span>[DATE] · [X] min read</span></div>
+        </div>
+      </header>
+
+      <!-- NAVY BODY TILE -->
+      <div class="post__body">
+        <!-- Swap the text for <img src="../assets/img/notes/your-image.jpg" alt="what it shows"> -->
+        <figure class="cover">[COVER IMAGE: screenshot or photo of the build]</figure>
+
+        <div class="prose">
+          <p>[Intro: what you were trying to do, and why.]</p>
+
+          <h2>What I did</h2>
+          <p>[Steps, in plain language.]</p>
+<pre><code><span class="you">ky@obg</span>:~$ [COMMAND YOU RAN]
+[OUTPUT OR RESULT]</code></pre>
+
+          <h2>What broke</h2>
+          <p>[The problem you hit and how you fixed it.]</p>
+          <blockquote>[Key takeaway, in one line.]</blockquote>
+
+          <h2>What's next</h2>
+          <p>[What you'll try next time.]</p>
+        </div>
+
+        <div class="chips"><span>#[tag]</span><span>#[tag]</span><span>#[tag]</span></div>
+
+        <nav class="pager" aria-label="More posts">
+          <a href="index.html"><small>← Previous</small>[OLDER POST]</a>
+          <a href="index.html"><small>Next →</small>[NEWER POST]</a>
+        </nav>
+      </div>
+    </article>
+
+    <section class="more" aria-labelledby="more-h">
+      <div class="more__inner">
+        <h2 id="more-h">More from Side Projects</h2>
+        <div class="cards">
+          <a class="card" href="index.html"><div class="card__img"></div><span class="tag tag--certs">CERTS</span><span class="card__title">[POST TITLE]</span><span class="card__meta">[DATE] · [X] min read</span></a>
+          <a class="card" href="index.html"><div class="card__img"></div><span class="tag tag--github">GITHUB</span><span class="card__title">[POST TITLE]</span><span class="card__meta">[DATE] · [X] min read</span></a>
+          <a class="card" href="index.html"><div class="card__img"></div><span class="tag tag--homelab">HOME LAB</span><span class="card__title">[POST TITLE]</span><span class="card__meta">[DATE] · [X] min read</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div style="display: flex; align-items: center; gap: 16px">
+      <a class="logo" href="../index.html"><img src="../assets/img/obg-logo-white.png" alt="OneBakedGay home"></a>
+      <span style="color: #8F8F8F">© 2026 OneBakedGay</span>
+    </div>
+    <nav aria-label="Social">
+      <a href="https://www.tiktok.com/">TIKTOK</a>
+      <a href="https://www.youtube.com/">YOUTUBE</a>
+      <a href="https://www.instagram.com/">INSTAGRAM</a>
+      <a href="../about.html">CONTACT</a>
+    </nav>
+    <div class="legal"><a href="#">Privacy</a><a href="#">Accessibility</a></div>
+  </footer>
+</body>
+</html>

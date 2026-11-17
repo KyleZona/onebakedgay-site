@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Building onebakedgay.com on GitHub Pages — OneBakedGay</title>
+  <meta name="description" content="Why I left the website builder behind and hand-coded this site in plain HTML, CSS and JavaScript, hosted free on GitHub Pages.">
+  <link rel="icon" href="../assets/img/ky-cam.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;700&display=swap">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/notes.css">
+</head>
+<body class="notes-page">
+
+  <header class="site-header">
+    <a class="logo" href="../index.html"><img src="../assets/img/obg-logo-white.png" alt="OneBakedGay home"></a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="../index.html">HOME</a>
+      <a href="../projects.html" aria-current="page">SIDE PROJECTS</a>
+      <a href="../about.html">ABOUT</a>
+      <a class="btn btn--pink" href="https://www.tiktok.com/">WATCH LIVE</a>
+    </nav>
+  </header>
+
+  <main>
+    <article class="post">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="../projects.html">Side Projects</a><span>/</span><a href="index.html">Notes</a><span>/</span><span aria-current="page">Building onebakedgay.com on GitHub Pages</span>
+      </nav>
+
+      <!-- GREY TITLE TILE -->
+      <header class="post__head">
+        <span class="tag tag--github">GITHUB</span>
+        <h1 class="post__title">Building onebakedgay.com on GitHub Pages</h1>
+        <p class="post__summary">Why I left the website builder behind and hand-coded this site in plain HTML, CSS and JavaScript, hosted free on GitHub Pages.</p>
+        <div class="byline">
+          <img src="../assets/img/ky-cam.png" alt="">
+          <div><b>Ky · OneBakedGay</b><span>Nov 17, 2026 · 3 min read</span></div>
+        </div>
+      </header>
+
+      <!-- NAVY BODY TILE -->
+      <div class="post__body">
+        <!-- Swap the text for <img src="../assets/img/notes/your-image.jpg" alt="what it shows"> -->
+        <figure class="cover">[COVER IMAGE: screenshot of the site]</figure>
+
+        <div class="prose">
+          <p>I wanted one home for everything OneBakedGay: the stream schedule, my cert progress, the home lab and the projects I'm building. The website builder I was using wanted a paid upgrade before it would run custom code, so I moved to something free that also counts as practice: writing the site myself and hosting it on GitHub Pages.</p>
+
+          <h2>What I did</h2>
+          <p>The whole site is a folder of plain files in a public GitHub repo. HTML holds the content, one shared CSS file holds the colours and fonts, and small JavaScript files handle the moving parts: the live schedule on the home page, the Windows 98 windows on the About page and the filters on Side Projects. Every time a change is pushed to the <code>main</code> branch, GitHub Pages publishes it.</p>
+<pre><code><span class="you">ky@obg</span>:~/onebakedgay-site$ git push origin main
+To https://github.com/KyleZona/onebakedgay-site
+   main -> main</code></pre>
+
+          <h2>What broke</h2>
+          <p>The first push got a 403: I was signed in, but the app doing the push hadn't been given access to the repo yet. Authentication is proving who you are; authorization is what you're allowed to touch. Then the site itself showed a 404 until I turned Pages on under Settings → Pages and pointed it at the <code>main</code> branch.</p>
+          <blockquote>A 403 means "I know who you are, and no." A 404 can just mean nothing is being served yet.</blockquote>
+
+          <h2>What's next</h2>
+          <p>Hooking up the contact form, pointing my own domain at GitHub Pages with HTTPS, and filling these notes with home lab and cert write-ups.</p>
+        </div>
+
+        <div class="chips"><span>#github</span><span>#html</span><span>#css</span><span>#javascript</span></div>
+
+        <nav class="pager" aria-label="More posts">
+          <a href="index.html"><small>← Back to</small>All notes</a>
+        </nav>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div style="display: flex; align-items: center; gap: 16px">
+      <a class="logo" href="../index.html"><img src="../assets/img/obg-logo-white.png" alt="OneBakedGay home"></a>
+      <span style="color: #8F8F8F">© 2026 OneBakedGay</span>
+    </div>
+    <nav aria-label="Social">
+      <a href="https://www.tiktok.com/">TIKTOK</a>
+      <a href="https://www.youtube.com/">YOUTUBE</a>
+      <a href="https://www.instagram.com/">INSTAGRAM</a>
+      <a href="../about.html">CONTACT</a>
+    </nav>
+    <div class="legal"><a href="#">Privacy</a><a href="#">Accessibility</a></div>
+  </footer>
+</body>
+</html>

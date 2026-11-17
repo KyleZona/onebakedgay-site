@@ -1,0 +1,103 @@
+/* Notes (blog) pages: post layout + post list */
+
+.notes-page {
+  --panel: #14213D;   /* post body */
+  --inset: #1D2C4D;   /* cover box, prev/next */
+  --line: #22304D;
+  --text: #D7DEEA;
+  --dim: #9FB0CC;
+  background: var(--console);
+}
+.notes-page .site-header, .notes-page .site-footer { border-color: var(--line); }
+
+/* TAGS: one colour per project. Only the tag is coloured. */
+.tag { align-self: flex-start; justify-self: start; padding: 5px 12px; font: 700 13px var(--font-mono); color: var(--black); }
+.tag--homelab { background: var(--green); }
+.tag--github { background: var(--pink); }
+.tag--certs { background: var(--white); box-shadow: inset 0 0 0 2px var(--black); }
+
+/* POST */
+.post { max-width: 860px; margin: 0 auto; padding: clamp(32px, 6vw, 80px) 24px 56px; display: flex; flex-direction: column; gap: 16px; }
+.crumbs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; font: 400 14px var(--font-mono); color: var(--dim); }
+.crumbs a { color: var(--dim); text-decoration: none; }
+.crumbs a:hover { color: var(--pink); }
+.crumbs [aria-current] { color: #E3EAF3; }
+
+/* Grey title tile */
+.post__head { background: var(--grey); color: var(--black); padding: clamp(22px, 4vw, 48px); display: flex; flex-direction: column; gap: 18px; }
+.post__title { margin: 0; font-weight: 900; font-size: clamp(36px, 5vw, 64px); line-height: 1.02; letter-spacing: -0.03em; text-wrap: balance; }
+.post__summary { margin: 0; font: 400 clamp(17px, 2vw, 21px)/1.55 var(--font-body); color: #2A2A2A; }
+.byline { display: flex; align-items: center; gap: 14px; font: 400 15px var(--font-body); }
+.byline img { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; }
+.byline b { display: block; font-weight: 600; }
+.byline span { color: #2A2A2A; }
+
+/* Navy body tile */
+.post__body { background: var(--panel); padding: clamp(20px, 4vw, 48px); display: flex; flex-direction: column; gap: 28px; }
+.cover { margin: 0; aspect-ratio: 16 / 9; background: var(--inset); display: flex; align-items: center; justify-content: center;
+  font: 400 15px var(--font-mono); color: var(--dim); text-align: center; padding: 0 16px; overflow: hidden; }
+.cover img { width: 100%; height: 100%; object-fit: cover; }
+
+/* The writing itself. These style plain HTML tags, so writing a post is
+   just <p>, <h2>, <pre>, <blockquote>, <ul>, <img>, no classes needed. */
+.prose { display: flex; flex-direction: column; gap: 22px; font: 400 19px/1.75 var(--font-body); color: var(--text); }
+.prose > * { margin: 0; }
+.prose h2 { margin-top: 12px; font: 900 30px/1.15 var(--font-display); letter-spacing: -0.02em; color: var(--white); }
+.prose a { color: var(--white); text-decoration-color: var(--pink); text-underline-offset: 3px; }
+.prose code { font: 400 0.85em var(--font-mono); background: #050914; padding: 2px 6px; }
+.prose pre { background: #050914; padding: 18px 20px; font: 400 15px/1.65 var(--font-mono); color: #E3EAF3; overflow-x: auto; }
+.prose pre code { background: none; padding: 0; font-size: inherit; }
+.prose .you { color: var(--pink); }   /* the ky@obg part of a prompt */
+.prose blockquote { padding: 4px 0 4px 22px; border-left: 4px solid var(--pink); font-style: italic; color: var(--white); }
+.prose ul, .prose ol { padding-left: 1.3em; }
+.prose li + li { margin-top: 6px; }
+
+.chips { display: flex; flex-wrap: wrap; gap: 10px; }
+.chips span { border: 1px solid var(--slate); padding: 6px 12px; font: 400 14px var(--font-mono); color: var(--text); }
+
+.pager { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.pager a { background: var(--inset); padding: 18px 20px; display: flex; flex-direction: column; gap: 6px; text-decoration: none; font-weight: 700; font-size: 17px; }
+.pager a:last-child { text-align: right; grid-column: 2; }
+.pager a:only-child { grid-column: 1; text-align: left; }
+.pager small { font: 400 13px var(--font-mono); color: var(--dim); }
+
+/* POST CARDS: used on the notes list and "More from Side Projects" */
+.more { border-top: 1px solid var(--line); padding: 56px var(--gutter); }
+.more__inner { max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 24px; }
+.more h2, .list-title { margin: 0; font-weight: 900; letter-spacing: -0.02em; }
+.more h2 { font-size: 32px; }
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 18px; }
+.card { display: flex; flex-direction: column; gap: 12px; text-decoration: none; }
+.card__img { aspect-ratio: 16 / 10; background: var(--panel); border: 1px solid var(--line); overflow: hidden; }
+.card__img img { width: 100%; height: 100%; object-fit: cover; }
+.card .tag { font-size: 12px; padding: 4px 10px; }
+.card__title { font-weight: 700; font-size: 19px; line-height: 1.25; }
+.card__meta { font: 400 14px var(--font-body); color: var(--dim); }
+
+/* NOTES LIST PAGE */
+.list { max-width: 1200px; margin: 0 auto; padding: clamp(32px, 6vw, 80px) var(--gutter) 64px; display: flex; flex-direction: column; gap: 28px; }
+.list-title { font-size: clamp(56px, 8vw, 112px); line-height: 0.85; letter-spacing: -0.05em; }
+.list-intro { margin: 0; max-width: 60ch; font: 400 19px/1.6 var(--font-body); color: var(--text); }
+
+/* PHONES */
+@media (max-width: 600px) {
+  .site-nav a:not(.btn) { display: none; }   /* keep just WATCH LIVE */
+  .site-header .logo img { height: 28px; }
+  .post { padding: 20px 14px 32px; gap: 12px; }
+  .crumbs { font-size: 12px; }
+  .byline img { width: 36px; height: 36px; }
+  .byline { font-size: 13px; }
+  .prose { font-size: 17px; gap: 16px; }
+  .prose h2 { font-size: 24px; margin-top: 8px; }
+  .prose pre { font-size: 13px; padding: 14px; }
+  .pager { grid-template-columns: minmax(0, 1fr); }
+  .pager a:last-child { grid-column: auto; }
+  .more { padding: 28px 18px; }
+  .more h2 { font-size: 24px; }
+  /* cards become compact rows: thumbnail left, text right */
+  .more .cards { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .more .card { display: grid; grid-template-columns: 84px minmax(0, 1fr); gap: 4px 12px; align-items: center; padding: 8px 0; border-bottom: 1px solid #16213A; }
+  .more .card__img { grid-row: span 3; height: 60px; aspect-ratio: auto; border: 0; }
+  .more .card__title { font-size: 15px; }
+  .more .card__meta { font-size: 12px; }
+}
