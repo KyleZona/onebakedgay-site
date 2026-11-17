@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Side Projects — OneBakedGay</title>
+  <meta name="description" content="Ky's side projects: the CompTIA cert path, GitHub repos and a Raspberry Pi home lab running Wazuh and Pi-hole.">
+  <link rel="icon" href="assets/img/ky-cam.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&family=JetBrains+Mono:wght@400;700&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/projects.css">
+</head>
+<body class="console-page">
+
+  <!-- TOP BAR: logo + shell prompt on the left, status on the right -->
+  <header class="topbar">
+    <div class="topbar__left">
+      <a class="logo" href="index.html"><img src="assets/img/obg-logo-white.png" alt="OneBakedGay home"></a>
+      <span class="prompt"><span class="prompt__user">ky@obg</span>:<span class="prompt__path">~/projects</span>$<span class="cursor" aria-hidden="true"></span></span>
+    </div>
+    <nav class="cmd-nav" aria-label="Main">
+      <a href="index.html">cd ~/home</a>
+      <a href="about.html">cd ~/about</a>
+      <a href="projects.html" aria-current="page">cd ~/projects</a>
+    </nav>
+    <div class="status"><span class="status__dot" aria-hidden="true"></span><span>ALL SYSTEMS NOMINAL</span><span class="status__clock" id="clock">--:-- MT</span></div>
+  </header>
+
+  <main class="console">
+    <h1 class="console__title">SIDE PROJECTS</h1>
+
+    <!-- TILES: click one to filter the activity log. data-filter matches data-src below. -->
+    <section class="tiles" aria-label="Projects (click to filter the activity log)">
+      <button class="tile" type="button" data-filter="certs" aria-pressed="false" style="--tile-color: var(--grey)">
+        <span class="tile__top"><span class="tile__kicker">CERTS / COMPTIA</span><span class="tile__badge">STUDYING</span></span>
+        <span class="tile__title">Cert Path</span>
+        <span class="tile__stats">
+          <span class="stat"><b>1</b><span>Earned</span></span>
+          <span class="stat"><b>4</b><span>To go</span></span>
+          <span class="stat"><b>A+</b><span>Up next</span></span>
+        </span>
+      </button>
+      <button class="tile" type="button" data-filter="github" aria-pressed="false" style="--tile-color: var(--pink)">
+        <span class="tile__top"><span class="tile__kicker">GITHUB / REPOS</span><span class="tile__badge">PUBLIC</span></span>
+        <span class="tile__title">GitHub</span>
+        <span class="tile__stats">
+          <span class="stat"><b>[#]</b><span>Repos</span></span>
+          <span class="stat"><b>[#]</b><span>Commits this month</span></span>
+          <span class="stat"><b>RE-Linux</b><span>Featured</span></span>
+        </span>
+      </button>
+      <button class="tile" type="button" data-filter="home-lab" aria-pressed="false" style="--tile-color: var(--green)">
+        <span class="tile__top"><span class="tile__kicker">HOME-LAB / PI 5</span><span class="tile__badge">ONLINE</span></span>
+        <span class="tile__title">Home Lab</span>
+        <span class="tile__stats">
+          <span class="stat"><b>[#]</b><span>Wazuh agents</span></span>
+          <span class="stat"><b>[#]</b><span>Alerts today</span></span>
+          <span class="stat"><b>[#]</b><span>Ads blocked</span></span>
+        </span>
+      </button>
+    </section>
+
+    <div class="lower">
+      <!-- CERT ROADMAP: a vertical timeline. Classes: --done, --next, or none (planned). -->
+      <section class="roadmap" aria-labelledby="roadmap-h">
+        <h2 class="label" id="roadmap-h">CERT ROADMAP</h2>
+        <ol class="steps">
+          <li class="step step--done"><span class="step__name">Tech+</span><span class="step__tag">CERTIFIED</span></li>
+          <li class="step step--next"><span class="step__name">A+ Core 1</span><span class="step__tag">UP NEXT</span></li>
+          <li class="step"><span class="step__name">A+ Core 2</span><span class="step__tag">PLANNED</span></li>
+          <li class="step"><span class="step__name">Security+</span><span class="step__tag">PLANNED</span></li>
+          <li class="step"><span class="step__name">Cisco</span><span class="step__tag">PLANNED</span></li>
+        </ol>
+      </section>
+
+      <!-- ACTIVITY LOG: newest first. Each entry links to its notes post. -->
+      <section class="log" aria-labelledby="log-h">
+        <div class="log__head"><h2 class="label" id="log-h">ACTIVITY LOG · <span id="filter-label">ALL</span></h2><span class="log__hint">click an entry to read the notes</span></div>
+        <div class="log__body">
+          <a class="entry" data-src="certs" href="notes/"><span class="entry__date">[DATE]</span><span class="entry__src">certs</span><span class="entry__msg">Tech+ passed</span><span class="entry__open">open →</span></a>
+          <a class="entry" data-src="github" href="notes/"><span class="entry__date">[DATE]</span><span class="entry__src">github</span><span class="entry__msg">[REPO] pushed: [COMMIT MESSAGE]</span><span class="entry__open">open →</span></a>
+          <a class="entry" data-src="home-lab" href="notes/"><span class="entry__date">[DATE]</span><span class="entry__src">home-lab</span><span class="entry__msg">[WHAT CHANGED IN THE LAB]</span><span class="entry__open">open →</span></a>
+          <a class="entry" data-src="github" href="notes/"><span class="entry__date">[DATE]</span><span class="entry__src">github</span><span class="entry__msg">re-linux: [FIX OR NEW ROOM]</span><span class="entry__open">open →</span></a>
+          <a class="entry" data-src="certs" href="notes/"><span class="entry__date">[DATE]</span><span class="entry__src">certs</span><span class="entry__msg">[A+ STUDY MILESTONE]</span><span class="entry__open">open →</span></a>
+          <a class="entry" data-src="home-lab" href="notes/"><span class="entry__date">[DATE]</span><span class="entry__src">home-lab</span><span class="entry__msg">[WAZUH OR PI-HOLE UPDATE]</span><span class="entry__open">open →</span></a>
+          <p class="log__prompt"><span class="prompt__user">ky@obg</span>:<span class="prompt__path">~/projects</span>$ tail -f activity.log<span class="cursor" aria-hidden="true"></span></p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="assets/js/projects.js"></script>
+</body>
+</html>

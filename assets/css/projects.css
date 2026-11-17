@@ -1,0 +1,134 @@
+/* Side Projects page: a terminal / console dashboard */
+
+.console-page {
+  --panel: #14213D;      /* tiles + roadmap (same as --midnight) */
+  --deep: #050914;       /* log background */
+  --line: #22304D;       /* thin borders */
+  --dim: #9FB0CC;        /* labels */
+  --faint: #6E7F9E;      /* dates */
+  --path: #7FA7D9;       /* ~/projects in the prompt */
+  background: var(--console);
+  font-family: var(--font-display);
+}
+
+/* TOP BAR */
+.topbar { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 14px 28px; padding: 28px var(--gutter) 0; }
+.topbar__left { display: flex; align-items: center; gap: 22px; }
+.topbar .logo img { height: 38px; }
+.prompt, .cmd-nav, .status, .label, .log__hint, .log__body { font-family: var(--font-mono); }
+.prompt { font-weight: 700; font-size: 18px; color: #E3EAF3; }
+.prompt__user { color: var(--pink); }
+.prompt__path { color: var(--path); }
+.cursor { margin-left: 4px; vertical-align: middle; }
+
+.cmd-nav { display: flex; gap: 20px; font-size: 15px; }
+.cmd-nav a { color: var(--dim); text-decoration: none; }
+.cmd-nav a:hover, .cmd-nav a[aria-current="page"] { color: var(--white); }
+
+.status { display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 15px; }
+.status__dot { width: 12px; height: 12px; border-radius: 50%; background: var(--green); animation: pulse 1.6s ease-in-out infinite; }
+.status__clock { color: var(--dim); }
+@keyframes pulse { 50% { opacity: 0.35; } }
+
+/* MAIN */
+.console { padding: 22px var(--gutter) 48px; display: flex; flex-direction: column; gap: 22px; }
+.console__title { margin: 0; font-weight: 900; font-size: clamp(56px, 8vw, 112px); line-height: 0.85; letter-spacing: -0.05em; }
+.label { margin: 0; font-size: 14px; font-weight: 700; color: var(--dim); }
+
+/* TILES. --tile-color is set on each tile in the HTML. */
+.tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.tile {
+  display: flex; flex-direction: column; gap: 16px; padding: 22px; text-align: left;
+  background: var(--panel); color: var(--white); font-family: inherit; cursor: pointer;
+  border: 3px solid var(--panel);
+}
+.tile:hover { border-color: #2A3D66; }
+.tile[aria-pressed="true"] { border-color: var(--tile-color); }   /* the selected filter */
+.tile__top { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.tile__kicker { font: 700 14px var(--font-mono); color: var(--dim); }
+.tile__badge { font: 700 12px var(--font-mono); padding: 4px 8px; background: var(--tile-color); color: var(--black); }
+.tile__title { font-weight: 900; font-size: 40px; line-height: 0.95; letter-spacing: -0.02em; }
+.tile__stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.stat { display: flex; flex-direction: column; gap: 4px; background: var(--console); padding: 10px 12px; min-width: 0; }
+.stat b { font: 700 22px var(--font-mono); overflow-wrap: anywhere; }
+.stat span { font-weight: 500; font-size: 13px; color: var(--dim); }
+
+/* LOWER: roadmap + log side by side */
+.lower { display: grid; grid-template-columns: minmax(280px, 380px) minmax(0, 1fr); gap: 16px; align-items: stretch; }
+
+/* ROADMAP: each step draws its own dot (::before) and connecting line (::after) */
+.roadmap { background: var(--panel); padding: 22px 26px; display: flex; flex-direction: column; gap: 18px; }
+.steps { list-style: none; margin: 0; padding: 0; }
+.step { position: relative; padding: 0 0 26px 40px; display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
+.step::before {   /* the dot */
+  content: ''; position: absolute; left: 0; top: 0; width: 22px; height: 22px; border-radius: 50%;
+  border: 3px solid var(--white); background: transparent;
+}
+.step::after {    /* the line down to the next dot */
+  content: ''; position: absolute; left: 10px; top: 26px; bottom: 4px; width: 3px; background: var(--slate);
+}
+.step:last-child { padding-bottom: 0; }
+.step:last-child::after { display: none; }
+.step__name { font-weight: 900; font-size: 24px; line-height: 1; }
+.step__tag { font: 700 12px var(--font-mono); padding: 3px 8px; color: var(--dim); border: 1px solid var(--slate); }
+.step--done::before { background: var(--pink); border-color: var(--pink); }
+.step--done::after { background: var(--pink); }
+.step--done .step__tag { background: var(--pink); border-color: var(--pink); color: var(--black); }
+.step--next::before { background: var(--white); }
+
+/* ACTIVITY LOG */
+.log { background: var(--deep); border: 1px solid var(--line); display: flex; flex-direction: column; min-width: 0; }
+.log__head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 16px; padding: 12px 18px; border-bottom: 1px solid var(--line); }
+.log__hint { font-size: 14px; font-weight: 700; color: var(--dim); }
+.log__body { padding: 12px 18px; display: flex; flex-direction: column; gap: 8px; font-size: 16px; }
+.entry { display: flex; gap: 18px; padding: 4px 6px; margin: 0 -6px; text-decoration: none; }
+.entry:hover, .entry:focus-visible { background: var(--midnight); color: inherit; }
+.entry[hidden] { display: none; }
+.entry__date, .entry__open { color: var(--faint); flex: none; }
+.entry__src { width: 90px; flex: none; }
+.entry__msg { color: #E3EAF3; flex: 1; min-width: 0; }
+.entry[data-src="certs"] .entry__src { color: var(--grey); }
+.entry[data-src="github"] .entry__src { color: var(--pink); }
+.entry[data-src="home-lab"] .entry__src { color: var(--green); }
+.log__prompt { margin: 6px 0 0; }
+
+@media (prefers-reduced-motion: reduce) { .status__dot { animation: none; } }
+
+/* TABLETS: tiles stack, roadmap goes above the log */
+@media (max-width: 1000px) {
+  .tiles { grid-template-columns: minmax(0, 1fr); }
+  .lower { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* PHONES */
+@media (max-width: 600px) {
+  .topbar { padding-top: 16px; }
+  .topbar .logo img { height: 28px; }
+  .prompt { font-size: 14px; }
+  .status { display: none; }
+  .cmd-nav { width: 100%; font-size: 13px; gap: 14px; }
+  .console { gap: 18px; padding-bottom: 32px; }
+  .console__title { font-size: 60px; }
+  .tile { padding: 16px; gap: 12px; }
+  .tile__kicker { font-size: 12px; }
+  .tile__title { font-size: 28px; }
+  .tile__stats { gap: 6px; }
+  .stat { padding: 8px; }
+  .stat b { font-size: 16px; }
+  .stat span { font-size: 11px; }
+  .roadmap { padding: 18px; }
+  .step { flex-direction: row; justify-content: space-between; align-items: flex-start; padding-left: 34px; padding-bottom: 18px; }
+  .step::before { width: 20px; height: 20px; }
+  .step::after { left: 9px; top: 24px; }
+  .step__name { font-size: 18px; }
+  .log__hint { display: none; }
+  .log__body { padding: 6px 14px 12px; gap: 0; font-size: 14px; }
+  /* Each entry becomes two lines: date + source, then the message */
+  .entry { flex-wrap: wrap; gap: 3px 10px; margin: 0; padding: 10px 0; border-bottom: 1px solid #16213A; min-height: 44px; }
+  .entry__date, .entry__src { font-size: 12px; }
+  .entry__src { width: auto; }
+  .entry__msg { flex: 1 1 calc(100% - 30px); }   /* wide enough to force it onto line two */
+  .entry__open { font-size: 0; }
+  .entry__open::after { content: '→'; font-size: 14px; }
+  .log__prompt { margin-top: 10px; font-size: 13px; }
+}
