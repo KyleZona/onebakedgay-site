@@ -1,0 +1,131 @@
+/* About page: a Windows 98 desktop */
+
+.desktop-page { background: var(--w98-desktop); color: var(--black); font-family: Tahoma, 'Segoe UI', sans-serif; }
+
+/* Desktop layout: icons | notepad | middle column | photo collage.
+   A grid keeps everything aligned without hand-placing pixels. */
+.desktop {
+  display: grid;
+  grid-template-columns: 112px minmax(0, 760px) minmax(0, 420px) minmax(0, 1fr);
+  gap: 32px;
+  align-items: start;
+  padding: 24px 24px 80px;   /* bottom space for the taskbar */
+  min-height: 100vh;
+}
+
+/* ICONS */
+.icons { display: flex; flex-direction: column; gap: 18px; }
+.icon {
+  width: 104px; display: flex; flex-direction: column; align-items: center; gap: 6px;
+  background: none; border: 0; padding: 4px; cursor: pointer; text-decoration: none;
+  color: var(--white); font: 400 15px var(--font-pixel); text-align: center;
+}
+.icon:hover { color: var(--white); }
+.icon:hover .icon__label, .icon:focus-visible .icon__label { background: #000080; }
+.icon__label { padding: 1px 4px; }
+.icon__img { width: 56px; height: 56px; image-rendering: pixelated; }
+.icon__shortcut { position: relative; width: 56px; height: 56px; }
+.icon__arrow { position: absolute; left: 0; bottom: 0; width: 28px; height: 28px; image-rendering: pixelated; }
+
+.badge {
+  width: 56px; height: 56px; display: flex; align-items: center; justify-content: center;
+  background: var(--w98-face); color: var(--w98-shadow);
+  font: 900 17px var(--font-display); letter-spacing: -0.03em;
+  box-shadow: inset -2px -2px var(--black), inset 2px 2px var(--white);
+}
+.badge--earned { background: var(--pink); color: var(--black); }
+.icon:not(:has(.badge--earned)) .icon__label { opacity: 0.8; }
+.badge--big { width: 84px; height: 84px; font-size: 25px; flex: none; }
+
+/* WINDOWS */
+.win[hidden] { display: none; }
+.menubar { display: flex; gap: 16px; padding: 4px 6px; font: 400 15px var(--font-pixel); }
+
+.notes { padding: 28px 32px; display: flex; flex-direction: column; gap: 22px; min-height: 680px; }
+.notes__title { margin: 0; font: 900 clamp(64px, 6vw, 104px)/0.86 var(--font-display); letter-spacing: -0.05em; }
+.notes p { margin: 0; font: 400 19px/1.6 'Courier New', monospace; max-width: 52ch; }
+.notes__links { display: flex; flex-wrap: wrap; gap: 10px; }
+.notes__links .w98-btn { padding: 12px 22px; font-size: 17px; }
+
+.col-mid { display: flex; flex-direction: column; gap: 28px; }
+.paint { margin-top: 4px; padding: 14px; background: var(--w98-shadow); display: flex; justify-content: center; }
+.paint img { width: min(100%, 340px); aspect-ratio: 1; border-radius: 50%; object-fit: cover; }
+.now-rows { padding: 14px; display: flex; flex-direction: column; gap: 10px; font-size: 16px; }
+.now-row { padding: 10px 12px; display: flex; justify-content: space-between; gap: 12px; }
+.music { padding: 12px; display: flex; align-items: center; gap: 10px; }
+.music__screen { flex: 1; min-width: 0; background: var(--black); padding: 12px 14px; font: 400 17px var(--font-pixel); }
+.music__track { display: flex; justify-content: space-between; gap: 12px; color: var(--green); }
+.music__artist { color: #4FB848; font-size: 14px; }
+.music__link { flex: none; min-height: 44px; padding: 0 14px; display: flex; align-items: center; }
+
+/* PHOTO COLLAGE: two columns, offset like a messy pile */
+.col-photos { display: grid; grid-template-columns: 1fr 0.7fr; gap: 24px; align-items: start; }
+.pic { margin: 0; }
+.pic__frame { margin-top: 4px; padding: 6px; background: var(--w98-shadow); }
+.pic__frame img { width: 100%; object-fit: cover; }
+.pic--a img { aspect-ratio: 4 / 3; }
+.pic--b img { aspect-ratio: 3 / 4; }
+.pic--c { grid-column: 1; } .pic--c img { aspect-ratio: 1; }
+.pic--d { grid-column: 2; margin-top: 80px; } .pic--d img { aspect-ratio: 16 / 10; }
+
+/* POP-UPS: centred over the desktop */
+.popup { position: fixed; z-index: 10; left: 50%; top: 45%; transform: translate(-50%, -50%);
+  width: min(460px, calc(100vw - 24px)); }
+.popup--wide { width: min(640px, calc(100vw - 24px)); }
+.popup__actions { padding: 0 20px 18px; display: flex; justify-content: flex-end; }
+.popup__ok { min-width: 100px; min-height: 40px; }
+.cert { padding: 22px; display: flex; gap: 20px; align-items: center; }
+.cert__info { display: flex; flex-direction: column; gap: 6px; font-size: 16px; }
+.cert__name { font: 900 26px/1 var(--font-display); letter-spacing: -0.02em; }
+.cert__status { align-self: flex-start; padding: 4px 10px; font: 700 14px var(--font-pixel); background: var(--w98-shadow); color: var(--white); }
+.cert__status--earned { background: #000080; }
+
+.files { margin-top: 4px; padding: 6px; }
+.files__row { display: grid; grid-template-columns: minmax(0, 1fr) 120px 100px; gap: 10px; align-items: center; padding: 10px; font-size: 15px; border-bottom: 1px dotted var(--w98-face); }
+.files__row--head { background: var(--w98-face); font-weight: 700; font-size: 14px; padding: 6px 10px; }
+.files__name { display: flex; align-items: center; gap: 10px; }
+.files__name img { width: 24px; height: 24px; image-rendering: pixelated; }
+.files a { color: #000080; }
+
+.mail { padding: 16px; display: flex; flex-direction: column; gap: 10px; font-size: 15px; }
+.mail label { display: flex; flex-direction: column; gap: 4px; }
+.mail input, .mail select, .mail textarea { border: 0; padding: 10px; font: 400 16px Tahoma, sans-serif; }
+.mail textarea { resize: vertical; }
+.mail .popup__ok { align-self: flex-end; }
+
+/* TASKBAR: pinned to the bottom of the screen */
+.taskbar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; height: 48px;
+  display: flex; align-items: center; gap: 6px; padding: 4px 6px; }
+.taskbar__start { height: 38px; padding: 0 12px; display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 17px; }
+.taskbar__start img { height: 16px; filter: invert(1); }
+.taskbar__task { height: 38px; min-width: 130px; padding: 0 12px; text-align: left; display: flex; align-items: center; }
+.taskbar__task[aria-pressed="true"] { background: #DCDCDC; font-weight: 700;
+  box-shadow: inset 1px 1px var(--black), inset -1px -1px var(--white), inset 2px 2px var(--w98-shadow); }
+.taskbar__clock { margin-left: auto; height: 34px; padding: 0 14px; display: flex; align-items: center; background: var(--w98-face); font: 400 16px var(--font-pixel); }
+
+/* MEDIUM SCREENS: photo collage moves under the other windows */
+@media (max-width: 1500px) {
+  .desktop { grid-template-columns: 112px minmax(0, 1fr) minmax(0, 400px); }
+  .col-photos { grid-column: 2 / -1; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .pic--c, .pic--d { grid-column: auto; margin-top: 0; }
+}
+
+/* PHONES: one column; icons in a grid; no collage */
+@media (max-width: 760px) {
+  .desktop { grid-template-columns: minmax(0, 1fr); gap: 14px; padding: 14px 12px 70px; }
+  .icons { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px 4px; }
+  .icon { width: auto; font-size: 12px; }
+  .icon__img, .icon__shortcut, .badge { width: 44px; height: 44px; }
+  .icon__arrow { width: 22px; height: 22px; }
+  .badge { font-size: 14px; }
+  .notes { padding: 18px; min-height: 0; gap: 14px; }
+  .notes__title { font-size: 64px; }
+  .notes p { font-size: 16px; }
+  .notes__links { flex-direction: column; }
+  .notes__links .w98-btn { text-align: center; }
+  .col-mid { gap: 14px; }
+  .col-photos { display: none; }
+  .taskbar__task:not([data-toggle="win-mail"]) { display: none; }
+  .files__row { grid-template-columns: minmax(0, 1fr) auto; }
+  .files__row > span:nth-child(2) { display: none; }
+}

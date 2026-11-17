@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Ky — OneBakedGay</title>
+  <meta name="description" content="Hey, I'm Ky: gaymer, IT enthusiast, book lover and occasional author. Certs, what I'm playing, and how to get in touch.">
+  <link rel="icon" href="assets/img/ky-cam.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&family=Pixelify+Sans:wght@400;700&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/about.css">
+</head>
+<body class="desktop-page">
+
+  <main class="desktop">
+    <!-- DESKTOP ICONS: certs (open a .cert window), Coursera folder, LinkedIn -->
+    <nav class="icons" aria-label="Certifications and links">
+      <!-- data-* attributes hold each cert's details; about.js reads them -->
+      <button class="icon" type="button" data-cert data-name="CompTIA Tech+" data-org="CompTIA" data-status="Certified · [DATE EARNED]" data-earned="true">
+        <span class="badge badge--earned">T+</span><span class="icon__label">Tech+</span>
+      </button>
+      <button class="icon" type="button" data-cert data-name="CompTIA A+ Core 1" data-org="CompTIA" data-status="In progress">
+        <span class="badge">A+</span><span class="icon__label">A+ Core 1</span>
+      </button>
+      <button class="icon" type="button" data-cert data-name="CompTIA A+ Core 2" data-org="CompTIA" data-status="In progress">
+        <span class="badge">A+</span><span class="icon__label">A+ Core 2</span>
+      </button>
+      <button class="icon" type="button" data-cert data-name="CompTIA Security+" data-org="CompTIA" data-status="In progress">
+        <span class="badge">S+</span><span class="icon__label">Security+</span>
+      </button>
+      <button class="icon" type="button" data-cert data-name="[CISCO CERT]" data-org="Cisco" data-status="In progress">
+        <span class="badge">CC</span><span class="icon__label">Cisco</span>
+      </button>
+      <button class="icon" type="button" data-open="win-coursera">
+        <img class="icon__img" src="assets/img/icons/folder.png" alt=""><span class="icon__label">Coursera Certs</span>
+      </button>
+      <a class="icon" href="https://www.linkedin.com/">
+        <span class="icon__shortcut"><img class="icon__img" src="assets/img/icons/internet-web-browser.png" alt=""><img class="icon__arrow" src="assets/img/icons/emblem-symbolic-link.png" alt=""></span>
+        <span class="icon__label">LinkedIn.url</span>
+      </a>
+    </nav>
+
+    <!-- NOTEPAD: the bio -->
+    <section class="w98 win win-notes" id="win-notes" aria-labelledby="t-notes">
+      <div class="w98__title"><span id="t-notes"><img class="w98__icon" src="assets/img/icons/accessories-text-editor.png" alt="">About_Ky.txt - Notepad</span><button class="w98-btn w98-btn--x" type="button" data-close="win-notes" aria-label="Close Notepad">×</button></div>
+      <div class="menubar"><span>File</span><span>Edit</span><span>Format</span><span>Help</span></div>
+      <div class="w98-inset notes">
+        <h1 class="notes__title">HEY,<br>I'M KY.</h1>
+        <p>Gaymer, IT enthusiast, book lover and occasional author. I stream every day on TikTok: [CURRENT GAME] in the mornings, Fortnite and Marvel Rivals at night, and a lot of learning cybersecurity out loud in between.</p>
+        <p>Live daily · 8–10 AM and 6–9 PM MT</p>
+        <div class="notes__links">
+          <a class="w98-btn" href="https://www.tiktok.com/">Watch live on TikTok</a>
+          <a class="w98-btn" href="https://www.linkedin.com/">My LinkedIn profile ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- MIDDLE COLUMN: photo, Now.exe, Now Playing -->
+    <div class="col-mid">
+      <section class="w98 win" id="win-photo" aria-labelledby="t-photo">
+        <div class="w98__title"><span id="t-photo"><img class="w98__icon" src="assets/img/icons/image-viewer.png" alt="">ky.bmp - Paint</span><button class="w98-btn w98-btn--x" type="button" data-close="win-photo" aria-label="Close photo">×</button></div>
+        <div class="paint"><img src="assets/img/ky-cam.png" alt="Ky"></div>
+      </section>
+
+      <section class="w98 win" id="win-now" aria-labelledby="t-now">
+        <div class="w98__title"><span id="t-now"><img class="w98__icon" src="assets/img/icons/application-x-executable.png" alt="">Now.exe</span><button class="w98-btn w98-btn--x" type="button" data-close="win-now" aria-label="Close Now.exe">×</button></div>
+        <div class="now-rows">
+          <div class="w98-inset now-row"><b>Playing</b><span>[CURRENT GAME]</span></div>
+          <div class="w98-inset now-row"><b>Learning</b><span>[CURRENT TOPIC]</span></div>
+          <div class="w98-inset now-row"><b>Reading</b><span>[CURRENT BOOK]</span></div>
+        </div>
+      </section>
+
+      <section class="w98 win" id="win-music" aria-labelledby="t-music">
+        <div class="w98__title"><span id="t-music"><img class="w98__icon" src="assets/img/icons/multimedia-audio-player.png" alt="">Now Playing</span><button class="w98-btn w98-btn--x" type="button" data-close="win-music" aria-label="Close Now Playing">×</button></div>
+        <div class="music">
+          <div class="w98-inset music__screen"><div class="music__track"><span>♪ [SONG TITLE]</span><span>[0:00]</span></div><div class="music__artist">[ARTIST]</div></div>
+          <a class="w98-btn music__link" href="https://open.spotify.com/">Listen on Spotify ↗</a>
+        </div>
+      </section>
+    </div>
+
+    <!-- PHOTO COLLAGE (desktop only) -->
+    <div class="col-photos" aria-label="Photos">
+      <figure class="w98 pic pic--a"><div class="w98__title"><span><img class="w98__icon" src="assets/img/icons/image-viewer.png" alt="">photo_01.jpg</span></div><div class="pic__frame"><img src="assets/img/photo-placeholder.png" alt="Photo 1"></div></figure>
+      <figure class="w98 pic pic--b"><div class="w98__title"><span><img class="w98__icon" src="assets/img/icons/image-viewer.png" alt="">photo_02.jpg</span></div><div class="pic__frame"><img src="assets/img/photo-placeholder.png" alt="Photo 2"></div></figure>
+      <figure class="w98 pic pic--c"><div class="w98__title"><span><img class="w98__icon" src="assets/img/icons/image-viewer.png" alt="">photo_03.jpg</span></div><div class="pic__frame"><img src="assets/img/photo-placeholder.png" alt="Photo 3"></div></figure>
+      <figure class="w98 pic pic--d"><div class="w98__title"><span><img class="w98__icon" src="assets/img/icons/image-viewer.png" alt="">photo_05.jpg</span></div><div class="pic__frame"><img src="assets/img/photo-placeholder.png" alt="Photo 4"></div></figure>
+    </div>
+
+    <!-- POP-UP WINDOWS: hidden until opened -->
+    <section class="w98 win popup" id="win-cert" aria-labelledby="t-cert" hidden>
+      <div class="w98__title"><span id="t-cert">cert</span><button class="w98-btn w98-btn--x" type="button" data-close="win-cert" aria-label="Close">×</button></div>
+      <div class="cert">
+        <span class="badge badge--big" id="cert-badge"></span>
+        <div class="cert__info">
+          <strong class="cert__name" id="cert-name"></strong>
+          <span>Issued by: <span id="cert-org"></span></span>
+          <span class="cert__status" id="cert-status"></span>
+        </div>
+      </div>
+      <div class="popup__actions"><button class="w98-btn popup__ok" type="button" data-close="win-cert">OK</button></div>
+    </section>
+
+    <section class="w98 win popup popup--wide" id="win-coursera" aria-labelledby="t-coursera" hidden>
+      <div class="w98__title"><span id="t-coursera"><img class="w98__icon" src="assets/img/icons/folder.png" alt="">C:\Ky\Coursera Certs</span><button class="w98-btn w98-btn--x" type="button" data-close="win-coursera" aria-label="Close">×</button></div>
+      <div class="w98-inset files">
+        <div class="files__row files__row--head"><span>Name</span><span>Issued</span><span>Credential</span></div>
+        <div class="files__row"><span class="files__name"><img src="assets/img/icons/application-pdf.png" alt="">[COURSE / CERTIFICATE NAME]</span><span>[DATE]</span><a href="https://www.coursera.org/">View ↗</a></div>
+        <div class="files__row"><span class="files__name"><img src="assets/img/icons/application-pdf.png" alt="">[COURSE / CERTIFICATE NAME]</span><span>[DATE]</span><a href="https://www.coursera.org/">View ↗</a></div>
+        <div class="files__row"><span class="files__name"><img src="assets/img/icons/application-pdf.png" alt="">[COURSE / CERTIFICATE NAME]</span><span>[DATE]</span><a href="https://www.coursera.org/">View ↗</a></div>
+      </div>
+    </section>
+
+    <section class="w98 win popup popup--wide" id="win-mail" aria-labelledby="t-mail" hidden>
+      <div class="w98__title"><span id="t-mail"><img class="w98__icon" src="assets/img/icons/mail-message-new.png" alt="">New Message - Say hi</span><button class="w98-btn w98-btn--x" type="button" data-close="win-mail" aria-label="Close">×</button></div>
+      <!-- Formspree receives this form and emails it to you. Replace YOUR_FORM_ID (Step 7). -->
+      <form class="mail" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <label>Name <input class="w98-inset" type="text" name="name" required></label>
+        <label>Email <input class="w98-inset" type="email" name="email" required></label>
+        <label>About
+          <select class="w98-inset" name="topic"><option>Collab</option><option>Business</option><option>Book rec</option><option>Just saying hi</option></select>
+        </label>
+        <label>Message <textarea class="w98-inset" name="message" rows="6" required></textarea></label>
+        <button class="w98-btn popup__ok" type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- TASKBAR -->
+  <footer class="w98 taskbar">
+    <a class="w98-btn taskbar__start" href="index.html"><img src="assets/img/obg-logo-white.png" alt="">Start</a>
+    <button class="w98-btn taskbar__task" type="button" data-toggle="win-notes">About_Ky.txt</button>
+    <button class="w98-btn taskbar__task" type="button" data-toggle="win-now">Now.exe</button>
+    <button class="w98-btn taskbar__task" type="button" data-toggle="win-mail">Say hi</button>
+    <a class="w98-btn taskbar__task" href="projects.html">Side Projects</a>
+    <span class="w98-inset taskbar__clock" id="clock">--:--</span>
+  </footer>
+
+  <script src="assets/js/about.js"></script>
+</body>
+</html>
