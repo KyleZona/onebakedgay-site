@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- The <head> holds info ABOUT the page: not shown directly -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OneBakedGay — Gaming, IT and nerd stuff, live daily</title>
+  <meta name="description" content="OneBakedGay: gaymer, IT enthusiast, book lover and occasional author. Live on TikTok every day, 8–10 AM and 6–9 PM Mountain.">
+  <link rel="icon" href="assets/img/ky-cam.png">
+
+  <!-- Fonts from Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&family=Pixelify+Sans:wght@400;700&display=swap">
+
+  <!-- Our shared styles, then styles only this page uses -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/home.css">
+</head>
+<body>
+  <!-- The <body> is everything you actually see -->
+
+  <header class="site-header">
+    <a class="logo" href="index.html"><img src="assets/img/obg-logo-white.png" alt="OneBakedGay home"></a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="index.html" aria-current="page">HOME</a>
+      <a href="projects.html">SIDE PROJECTS</a>
+      <a href="about.html">ABOUT</a>
+      <a class="btn btn--pink" href="https://www.tiktok.com/">WATCH LIVE</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO: camera circle as the O, then BG, then the 98 windows -->
+    <section class="hero">
+      <div class="hero__logo">
+        <img class="hero__cam" src="assets/img/ky-cam.png" alt="Ky on stream, as the O in OBG">
+        <span class="hero__bg" aria-hidden="true">BG</span>
+        <h1 class="sr-only">OneBakedGay</h1>
+      </div>
+
+      <div class="hero__windows">
+        <div class="win-row win-row--top">
+        <div class="w98 win-now">
+          <div class="w98__title"><span><img class="w98__icon" src="assets/img/icons/application-x-executable.png" alt="">Now.exe</span></div>
+          <div class="now-rows">
+            <div class="w98-inset now-row"><b>Playing</b><span>[CURRENT GAME]</span></div>
+            <div class="w98-inset now-row"><b>Learning</b><span>[CURRENT TOPIC]</span></div>
+            <div class="w98-inset now-row"><b>Reading</b><span>[CURRENT BOOK]</span></div>
+          </div>
+        </div>
+
+        <div class="w98 win-photo2">
+          <div class="w98__title"><span><img class="w98__icon" src="assets/img/icons/image-viewer.png" alt="">photo_02.jpg</span></div>
+          <div class="photo-frame"><img src="assets/img/photo-placeholder.png" alt="Photo of Ky" class="photo-wide"></div>
+        </div>
+
+        </div>
+        <div class="win-row win-row--bottom">
+        <div class="w98 win-photo1">
+          <div class="w98__title"><span><img class="w98__icon" src="assets/img/icons/image-viewer.png" alt="">photo_01.jpg</span></div>
+          <div class="photo-frame"><img src="assets/img/photo-placeholder.png" alt="Photo of Ky" class="photo-landscape"></div>
+        </div>
+
+        <div class="w98 win-music">
+          <div class="w98__title"><span><img class="w98__icon" src="assets/img/icons/multimedia-audio-player.png" alt="">Now Playing</span></div>
+          <div class="music">
+            <div class="w98-inset music__screen">
+              <div class="music__track"><span>♪ [SONG TITLE]</span><span>[0:00]</span></div>
+              <div class="music__artist">[ARTIST]</div>
+            </div>
+            <a class="w98-btn music__link" href="https://open.spotify.com/">Listen on Spotify ↗</a>
+          </div>
+        </div>
+        </div>
+      </div>
+
+      <p class="hero__name">OneBakedGay</p>
+    </section>
+
+    <!-- SCROLLING BAND + follow button -->
+    <section class="marquee" aria-label="About OneBakedGay">
+      <div class="marquee__strip">
+        <div class="marquee__track" aria-hidden="true">
+          <span>GAYMER &nbsp;|&nbsp; IT ENTHUSIAST &nbsp;|&nbsp; BOOK LOVER &nbsp;|&nbsp; OCCASIONAL AUTHOR &nbsp;|&nbsp;</span>
+          <span>GAYMER &nbsp;|&nbsp; IT ENTHUSIAST &nbsp;|&nbsp; BOOK LOVER &nbsp;|&nbsp; OCCASIONAL AUTHOR &nbsp;|&nbsp;</span>
+        </div>
+        <p class="sr-only">Gaymer, IT enthusiast, book lover, occasional author.</p>
+      </div>
+      <a class="btn btn--black marquee__follow" href="https://www.tiktok.com/">FOLLOW ON TIKTOK</a>
+    </section>
+
+    <!-- SCHEDULE: day cards are built by assets/js/schedule.js -->
+    <section class="band schedule">
+      <div class="schedule__head">
+        <div>
+          <p class="schedule__status" id="stream-status">Live daily · 8–10 AM and 6–9 PM MT</p>
+          <h2 class="schedule__title">SCHEDULE</h2>
+        </div>
+        <div class="schedule__side">
+          <a class="btn btn--slate" href="https://www.tiktok.com/">WATCH CLIPS ON TIKTOK →</a>
+          <span class="schedule__tz">All times Mountain</span>
+        </div>
+      </div>
+      <div class="days" id="days"></div>
+    </section>
+
+    <!-- ABOUT ME + SIDE PROJECTS -->
+    <section class="split">
+      <a class="split__card split__card--grey" href="about.html">
+        <span><span class="split__title">ABOUT ME</span><span class="split__sub">Who's behind the camera, certs and all, and how to get in touch.</span></span>
+        <span class="split__arrow" aria-hidden="true">→</span>
+      </a>
+      <a class="split__card split__card--navy" href="projects.html">
+        <span><span class="split__title">SIDE PROJECTS</span><span class="split__sub">Learning cybersecurity in public: Linux, a Raspberry Pi home lab, cert study.</span></span>
+        <span class="split__arrow" aria-hidden="true">→</span>
+      </a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div style="display: flex; align-items: center; gap: 16px">
+      <a class="logo" href="index.html"><img src="assets/img/obg-logo-white.png" alt="OneBakedGay home"></a>
+      <span style="color: #8F8F8F">© 2026 OneBakedGay</span>
+    </div>
+    <nav aria-label="Social">
+      <a href="https://www.tiktok.com/">TIKTOK</a>
+      <a href="https://www.youtube.com/">YOUTUBE</a>
+      <a href="https://www.instagram.com/">INSTAGRAM</a>
+      <a href="about.html">CONTACT</a>
+    </nav>
+    <div class="legal"><a href="#">Privacy</a><a href="#">Accessibility</a></div>
+  </footer>
+
+  <!-- Scripts go last so the page shows first -->
+  <script src="assets/js/schedule.js"></script>
+</body>
+</html>
