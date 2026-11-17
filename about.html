@@ -116,8 +116,11 @@
 
     <section class="w98 win popup popup--wide" id="win-mail" aria-labelledby="t-mail" hidden>
       <div class="w98__title"><span id="t-mail"><img class="w98__icon" src="assets/img/icons/mail-message-new.png" alt="">New Message - Say hi</span><button class="w98-btn w98-btn--x" type="button" data-close="win-mail" aria-label="Close">×</button></div>
-      <!-- Formspree receives this form and emails it to you. Replace YOUR_FORM_ID (Step 7). -->
-      <form class="mail" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <!-- Formspree receives this form and emails it to Ky. -->
+      <form class="mail" action="https://formspree.io/f/xrpqqyjn" method="POST">
+        <input type="hidden" name="_subject" value="New message from onebakedgay.com">
+        <!-- Spam trap: hidden from people, bots fill it in, Formspree drops those -->
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display: none">
         <label>Name <input class="w98-inset" type="text" name="name" required></label>
         <label>Email <input class="w98-inset" type="email" name="email" required></label>
         <label>About
