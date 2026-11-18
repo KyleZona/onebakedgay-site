@@ -66,10 +66,10 @@
           <div class="w98__title"><span><img class="w98__icon" src="assets/img/icons/multimedia-audio-player.png" alt="">Now Playing</span></div>
           <div class="music">
             <div class="w98-inset music__screen">
-              <div class="music__track"><span>♪ [SONG TITLE]</span><span>[0:00]</span></div>
-              <div class="music__artist">[ARTIST]</div>
+              <div class="music__track"><span class="music__title" data-np="title">♪ Loading…</span><span class="music__status" data-np="status"></span></div>
+              <div class="music__artist" data-np="artist">&nbsp;</div>
             </div>
-            <a class="w98-btn music__link" href="https://open.spotify.com/">Listen on Spotify ↗</a>
+            <a class="w98-btn music__link" data-np="link" href="https://open.spotify.com/">Listen on Spotify ↗</a>
           </div>
         </div>
         </div>
@@ -134,5 +134,6 @@
 
   <!-- Scripts go last so the page shows first -->
   <script src="assets/js/schedule.js"></script>
+  <script src="assets/js/nowplaying.js"></script>
 </body>
 </html>

@@ -132,3 +132,9 @@ a:hover { color: var(--pink); }
 @media (prefers-reduced-motion: reduce) {
   .marquee__track, .cursor { animation: none; }
 }
+
+/* NOW PLAYING (shared by Home and About; filled in by nowplaying.js) */
+.music__title, .music__artist { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+.music__status { flex: none; }
+.music__status.is-live { animation: blink 1s steps(1) infinite; }
+@media (prefers-reduced-motion: reduce) { .music__status.is-live { animation: none; } }

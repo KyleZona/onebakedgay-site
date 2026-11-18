@@ -76,8 +76,8 @@
       <section class="w98 win" id="win-music" aria-labelledby="t-music">
         <div class="w98__title"><span id="t-music"><img class="w98__icon" src="assets/img/icons/multimedia-audio-player.png" alt="">Now Playing</span><button class="w98-btn w98-btn--x" type="button" data-close="win-music" aria-label="Close Now Playing">×</button></div>
         <div class="music">
-          <div class="w98-inset music__screen"><div class="music__track"><span>♪ [SONG TITLE]</span><span>[0:00]</span></div><div class="music__artist">[ARTIST]</div></div>
-          <a class="w98-btn music__link" href="https://open.spotify.com/">Listen on Spotify ↗</a>
+          <div class="w98-inset music__screen"><div class="music__track"><span class="music__title" data-np="title">♪ Loading…</span><span class="music__status" data-np="status"></span></div><div class="music__artist" data-np="artist">&nbsp;</div></div>
+          <a class="w98-btn music__link" data-np="link" href="https://open.spotify.com/">Listen on Spotify ↗</a>
         </div>
       </section>
     </div>
@@ -143,5 +143,6 @@
   </footer>
 
   <script src="assets/js/about.js"></script>
+  <script src="assets/js/nowplaying.js"></script>
 </body>
 </html>
