@@ -6,7 +6,7 @@
    A grid keeps everything aligned without hand-placing pixels. */
 .desktop {
   display: grid;
-  grid-template-columns: 112px minmax(0, 760px) minmax(0, 420px) minmax(0, 1fr);
+  grid-template-columns: 112px minmax(0, 760px) minmax(0, 420px) auto;
   gap: 32px;
   align-items: start;
   padding: 24px 24px 80px;   /* bottom space for the taskbar */
@@ -59,7 +59,8 @@
 .music__link { flex: none; min-height: 44px; padding: 0 14px; display: flex; align-items: center; }
 
 /* PHOTO COLLAGE: two columns, offset like a messy pile */
-.col-photos { display: grid; grid-template-columns: 1fr 0.7fr; gap: 24px; align-items: start; }
+/* Fixed sizes, like the other windows, so the photos never balloon or shrink */
+.col-photos { display: grid; grid-template-columns: 300px 210px; gap: 24px; align-items: start; }
 .pic { margin: 0; }
 .pic__frame { margin-top: 4px; padding: 6px; background: var(--w98-shadow); }
 .pic__frame img { width: 100%; object-fit: cover; }
@@ -103,10 +104,10 @@
   box-shadow: inset 1px 1px var(--black), inset -1px -1px var(--white), inset 2px 2px var(--w98-shadow); }
 .taskbar__clock { margin-left: auto; height: 34px; padding: 0 14px; display: flex; align-items: center; background: var(--w98-face); font: 400 16px var(--font-pixel); }
 
-/* MEDIUM SCREENS: photo collage moves under the other windows */
-@media (max-width: 1500px) {
-  .desktop { grid-template-columns: 112px minmax(0, 1fr) minmax(0, 400px); }
-  .col-photos { grid-column: 2 / -1; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+/* SMALLER DESKTOPS: not enough room beside the windows, so the photos line up underneath */
+@media (max-width: 1950px) {
+  .desktop { grid-template-columns: 112px minmax(0, 760px) minmax(0, 420px); }
+  .col-photos { grid-column: 2 / -1; grid-template-columns: repeat(4, minmax(0, 280px)); }
   .pic--c, .pic--d { grid-column: auto; margin-top: 0; }
 }
 
