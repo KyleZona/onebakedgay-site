@@ -61,7 +61,7 @@
 .pager a:only-child { grid-column: 1; text-align: left; }
 .pager small { font: 400 13px var(--font-mono); color: var(--dim); }
 
-/* POST CARDS: used on the notes list and "More from Side Projects" */
+/* POST CARDS: used on the notes list and "More from Projects" */
 .more { border-top: 1px solid var(--line); padding: 56px var(--gutter); }
 .more__inner { max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 24px; }
 .more h2, .list-title { margin: 0; font-weight: 900; letter-spacing: -0.02em; }

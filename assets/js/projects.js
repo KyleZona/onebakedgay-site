@@ -1,4 +1,4 @@
-// Side Projects page: tile filters + clock.
+// Projects page: tile filters + clock.
 // Each tile has data-filter="certs" (etc). Each log entry has a matching
 // data-src. Clicking a tile hides the entries that don't match; clicking
 // the same tile again shows everything.

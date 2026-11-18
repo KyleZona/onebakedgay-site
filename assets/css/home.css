@@ -73,7 +73,7 @@
 .slot__what { font-weight: 700; font-size: 15px; line-height: 1.3; }
 .slot--pm .slot__what { color: #D6DCEB; }
 
-/* ABOUT ME + SIDE PROJECTS ------------------------------- */
+/* ABOUT ME + PROJECTS ------------------------------- */
 .split { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr)); }
 .split__card { display: flex; align-items: center; justify-content: space-between; gap: 24px;
   padding: clamp(28px, 3vw, 44px) var(--gutter); text-decoration: none; }
