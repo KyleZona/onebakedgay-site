@@ -139,3 +139,4 @@ a:hover { color: var(--pink); }
 .music__status.is-live { animation: blink 1s steps(1) infinite; }
 @media (prefers-reduced-motion: reduce) { .music__status.is-live { animation: none; } }
 .music__link { text-align: center; line-height: 1.15; padding-top: 6px; padding-bottom: 6px; }
+[data-game="name"].is-live::before { content: '● '; color: #1FA81F; }
