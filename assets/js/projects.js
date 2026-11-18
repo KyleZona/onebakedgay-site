@@ -5,6 +5,9 @@
 
 const tiles = document.querySelectorAll('.tile');
 const entries = document.querySelectorAll('.entry');
+const docs = document.querySelectorAll('.doc');
+const docsLabel = document.getElementById('docs-filter-label');
+const docsEmpty = document.getElementById('docs-empty');
 const label = document.getElementById('filter-label');
 
 tiles.forEach((tile) => {
@@ -20,6 +23,15 @@ tiles.forEach((tile) => {
     });
 
     label.textContent = filter ? tile.querySelector('.tile__title').textContent.toUpperCase() : 'ALL';
+
+    // Project docs use the same filter
+    let shown = 0;
+    docs.forEach((doc) => {
+      doc.hidden = filter !== null && doc.dataset.src !== filter;
+      if (!doc.hidden) shown += 1;
+    });
+    docsLabel.textContent = label.textContent;
+    docsEmpty.hidden = shown > 0;
   });
 });
 

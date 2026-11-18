@@ -89,6 +89,42 @@
         </div>
       </section>
     </div>
+
+    <!-- PROJECT DOCS: one card per write-up. data-src matches the tiles above,
+         so clicking a tile filters these too. Docs are made from notes/TEMPLATE.html. -->
+    <section class="docs" aria-labelledby="docs-h">
+      <div class="docs__head">
+        <h2 class="label" id="docs-h">PROJECT DOCS · <span id="docs-filter-label">ALL</span></h2>
+        <a class="docs__all" href="notes/">ls ~/notes →</a>
+      </div>
+      <div class="docs__grid">
+        <article class="doc" data-src="github">
+          <div class="doc__top"><span class="tag tag--github">GITHUB</span><span class="doc__date">2026-11-17</span></div>
+          <h3 class="doc__title"><a href="notes/building-this-site.html">Building onebakedgay.com on GitHub Pages</a></h3>
+          <p class="doc__sum">Hand-coding this site in HTML, CSS and JavaScript, hosted free on GitHub Pages, plus the 403 and 404 along the way.</p>
+          <div class="doc__links"><a href="notes/building-this-site.html">Read doc →</a><a href="https://github.com/KyleZona/onebakedgay-site">GitHub ↗</a></div>
+        </article>
+        <article class="doc" data-src="home-lab">
+          <div class="doc__top"><span class="tag tag--homelab">HOME LAB</span><span class="doc__date">[DATE]</span></div>
+          <h3 class="doc__title"><a href="notes/">[HOME LAB DOC TITLE]</a></h3>
+          <p class="doc__sum">[What's running on the Pi 5, what changed, what's next.]</p>
+          <div class="doc__links"><a href="notes/">Read doc →</a></div>
+        </article>
+        <article class="doc" data-src="github">
+          <div class="doc__top"><span class="tag tag--github">GITHUB</span><span class="doc__date">[DATE]</span></div>
+          <h3 class="doc__title"><a href="notes/">[RE-LINUX DOC TITLE]</a></h3>
+          <p class="doc__sum">[Changelog: new rooms, fixes, what's being built next.]</p>
+          <div class="doc__links"><a href="notes/">Read doc →</a><a href="https://github.com/KyleZona">GitHub ↗</a></div>
+        </article>
+        <article class="doc" data-src="certs">
+          <div class="doc__top"><span class="tag tag--certs">CERTS</span><span class="doc__date">[DATE]</span></div>
+          <h3 class="doc__title"><a href="notes/">[A+ CORE 1 STUDY LOG]</a></h3>
+          <p class="doc__sum">[What you're studying, what's clicking, practice scores.]</p>
+          <div class="doc__links"><a href="notes/">Read doc →</a></div>
+        </article>
+      </div>
+      <p class="docs__empty" id="docs-empty" hidden>No docs for this project yet.</p>
+    </section>
   </main>
 
   <script src="assets/js/projects.js"></script>

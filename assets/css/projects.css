@@ -132,3 +132,29 @@
   .entry__open::after { content: '→'; font-size: 14px; }
   .log__prompt { margin-top: 10px; font-size: 13px; }
 }
+
+/* PROJECT DOCS: blog-style cards for project logs */
+.docs { display: flex; flex-direction: column; gap: 14px; }
+.docs__head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px 16px; padding-top: 10px; }
+.docs__all { font: 700 14px var(--font-mono); color: var(--dim); text-decoration: none; }
+.docs__all:hover { color: var(--white); }
+.docs__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+.doc { background: var(--panel); padding: 20px 22px; display: flex; flex-direction: column; gap: 12px; border: 1px solid var(--line); }
+.doc[hidden] { display: none; }
+.doc:hover { border-color: var(--slate); }
+.doc__top { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.doc__date { font: 400 13px var(--font-mono); color: var(--faint); }
+.doc__title { margin: 0; font-weight: 900; font-size: 22px; line-height: 1.15; letter-spacing: -0.01em; }
+.doc__title a { text-decoration: none; }
+.doc__title a:hover { text-decoration: underline; text-decoration-color: var(--pink); }
+.doc__sum { margin: 0; font: 400 15px/1.55 var(--font-body); color: #D7DEEA; flex: 1; }
+.doc__links { display: flex; flex-wrap: wrap; gap: 18px; font: 700 14px var(--font-mono); }
+.doc__links a { color: var(--dim); text-decoration: none; }
+.doc__links a:hover { color: var(--white); }
+.docs__empty { margin: 0; font: 400 15px var(--font-mono); color: var(--faint); }
+
+/* Tags (same colours as the notes pages) */
+.tag { padding: 4px 10px; font: 700 12px var(--font-mono); color: var(--black); }
+.tag--homelab { background: var(--green); }
+.tag--github { background: var(--pink); }
+.tag--certs { background: var(--white); }
