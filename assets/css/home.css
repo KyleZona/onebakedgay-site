@@ -114,3 +114,11 @@
   .slot { padding: 10px 12px; gap: 4px; }
   .slot__what { font-size: 12px; }
 }
+.now-row--link { text-decoration: none; color: inherit; }
+.now-row--link span::after { content: ' →'; }
+.now-row--link:hover b, .now-row--link:focus-visible b { text-decoration: underline; }
+/* Now.exe fills the height of the photo beside it; the two rows share the space */
+.win-row--top { align-items: stretch; }
+.win-now { display: flex; flex-direction: column; }
+.win-now .now-rows { flex: 1; }
+.win-now .now-row { flex: 1; align-items: center; }
