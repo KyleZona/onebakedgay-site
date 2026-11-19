@@ -3,7 +3,7 @@
 
 const SLOTS = [
   { start: 8 * 60,  end: 10 * 60, label: '8–10 AM', what: '[CURRENT GAME]',                  kind: 'am', name: 'MORNING' },
-  { start: 18 * 60, end: 21 * 60, label: '6–9 PM',  what: 'Fortnite / Marvel Rivals / etc.', kind: 'pm', name: 'EVENING' }
+  { start: 20 * 60, end: 22 * 60, label: '8–10 PM', what: 'Fortnite / Marvel Rivals / etc.', kind: 'pm', name: 'EVENING' }
 ];
 const DAYS = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'];
 
