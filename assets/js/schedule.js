@@ -2,8 +2,8 @@
 // "next stream" line up to date. Edit SLOTS to change the schedule.
 
 const SLOTS = [
-  { start: 8 * 60,  end: 10 * 60, label: '8–10 AM', what: '[CURRENT GAME]',                  kind: 'am', name: 'MORNING' },
-  { start: 20 * 60, end: 22 * 60, label: '8–10 PM', what: 'Fortnite / Marvel Rivals / etc.', kind: 'pm', name: 'EVENING' }
+  { start: 8 * 60,  end: 10 * 60, label: '8–10 AM', kind: 'am', name: 'MORNING' },
+  { start: 20 * 60, end: 22 * 60, label: '8–10 PM', kind: 'pm', name: 'EVENING' }
 ];
 const DAYS = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'];
 
@@ -37,7 +37,6 @@ function render() {
     const slots = SLOTS.map(s => `
       <div class="slot slot--${s.kind}">
         <span class="slot__time">${s.label}</span>
-        <span class="slot__what">${s.what}</span>
       </div>`).join('');
     return `
       <div class="${classes.join(' ')}">
