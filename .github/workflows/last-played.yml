@@ -1,0 +1,35 @@
+# Remembers the last game Ky played.
+# Every 5 minutes GitHub runs this: it asks Lanyard what Discord sees Ky
+# playing, and if it's a game, saves the name and time into Lanyard KV
+# (a small public notepad on Ky's Lanyard profile). The website then reads
+# it back to show "Last played: ..." when Ky isn't in a game.
+#
+# Needs one repo secret: LANYARD_API_KEY (DM the Lanyard bot ".apikey").
+name: Remember last played game
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'   # every 5 minutes (GitHub may run it a little late)
+  workflow_dispatch:         # lets you run it by hand from the Actions tab
+
+jobs:
+  save:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Discord and save the game
+        env:
+          LANYARD_API_KEY: ${{ secrets.LANYARD_API_KEY }}
+          DISCORD_ID: '1416408179847462964'
+        run: |
+          if [ -z "$LANYARD_API_KEY" ]; then echo "LANYARD_API_KEY secret is missing"; exit 1; fi
+          data=$(curl -sf "https://api.lanyard.rest/v1/users/$DISCORD_ID")
+          # Discord activity type 0 = "Playing a game"
+          game=$(echo "$data" | jq -r '[.data.activities[] | select(.type == 0) | .name][0] // empty')
+          if [ -z "$game" ]; then echo "Not in a game right now, nothing to save."; exit 0; fi
+          echo "Playing: $game"
+          now=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+          curl -sf -X PUT -H "Authorization: $LANYARD_API_KEY" --data "$game" \
+            "https://api.lanyard.rest/v1/users/$DISCORD_ID/kv/last_game" > /dev/null
+          curl -sf -X PUT -H "Authorization: $LANYARD_API_KEY" --data "$now" \
+            "https://api.lanyard.rest/v1/users/$DISCORD_ID/kv/last_game_at" > /dev/null
+          echo "Saved $game at $now"
