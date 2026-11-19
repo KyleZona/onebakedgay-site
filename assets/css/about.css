@@ -139,3 +139,8 @@
 .cert__logo img { display: block; width: 140px; height: 140px; }
 @media (max-width: 760px) { .cert__logo img { width: 110px; height: 110px; } }
 .badge[hidden] { display: none; }
+
+/* "Studying for" row links to the cert roadmap on Projects */
+.now-row--link { text-decoration: none; color: inherit; }
+.now-row--link span::after { content: ' →'; }
+.now-row--link:hover b, .now-row--link:focus-visible b { text-decoration: underline; }
