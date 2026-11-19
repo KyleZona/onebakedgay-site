@@ -122,3 +122,9 @@
 .win-now { display: flex; flex-direction: column; }
 .win-now .now-rows { flex: 1; }
 .win-now .now-row { flex: 1; align-items: center; }
+
+/* PHONES (from the canvas edit): just Now.exe and Now Playing under the logo;
+   the two photo windows and the "OneBakedGay" caption are desktop-only */
+@media (max-width: 600px) {
+  .win-photo1, .win-photo2, .hero__name { display: none; }
+}
