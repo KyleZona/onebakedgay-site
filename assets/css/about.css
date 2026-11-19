@@ -130,3 +130,12 @@
   .files__row { grid-template-columns: minmax(0, 1fr) auto; }
   .files__row > span:nth-child(2) { display: none; }
 }
+
+/* Official CompTIA cert logo in the cert pop-up.
+   CompTIA rules: white (#FFFFFF) or #F4F4F4 background only, clear space
+   around it, never altered or recoloured, at least 5/8 in (60px) wide. */
+.cert__logo { flex: none; background: #FFFFFF; padding: 16px; }
+.cert__logo[hidden] { display: none; }
+.cert__logo img { display: block; width: 140px; height: 140px; }
+@media (max-width: 760px) { .cert__logo img { width: 110px; height: 110px; } }
+.badge[hidden] { display: none; }

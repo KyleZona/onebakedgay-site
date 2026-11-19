@@ -20,3 +20,4 @@ assets/img/         logo, photos, icons
 ## Credits
 
 Retro icons from the [Chicago95](https://github.com/grassmunk/Chicago95) project (GPL-3.0 / MIT).
+- CompTIA Tech+ logo (assets/img/comptia-tech-plus-certified.svg): official CompTIA mark, used by a certified individual per CompTIA's logo guidelines; not covered by this repo's code licence.

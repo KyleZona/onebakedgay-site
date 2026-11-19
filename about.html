@@ -18,17 +18,17 @@
     <!-- DESKTOP ICONS: certs (open a .cert window), Coursera folder, LinkedIn -->
     <nav class="icons" aria-label="Certifications and links">
       <!-- data-* attributes hold each cert's details; about.js reads them -->
-      <button class="icon" type="button" data-cert data-name="CompTIA Tech+" data-org="CompTIA" data-status="Certified · [DATE EARNED]" data-earned="true">
-        <span class="badge badge--earned">T+</span><span class="icon__label">Tech+</span>
+      <button class="icon" type="button" data-cert data-name="CompTIA Tech+" data-org="CompTIA" data-status="Certified · Oct 29, 2026" data-earned="true" data-logo="assets/img/comptia-tech-plus-certified.svg" data-logo-alt="CompTIA Tech+ Certified, Plus Series logo">
+        <span class="badge badge--earned">T+</span><span class="icon__label">CompTIA Tech+</span>
       </button>
       <button class="icon" type="button" data-cert data-name="CompTIA A+ Core 1" data-org="CompTIA" data-status="In progress">
-        <span class="badge">A+</span><span class="icon__label">A+ Core 1</span>
+        <span class="badge">A+</span><span class="icon__label">CompTIA A+ Core 1</span>
       </button>
       <button class="icon" type="button" data-cert data-name="CompTIA A+ Core 2" data-org="CompTIA" data-status="In progress">
-        <span class="badge">A+</span><span class="icon__label">A+ Core 2</span>
+        <span class="badge">A+</span><span class="icon__label">CompTIA A+ Core 2</span>
       </button>
       <button class="icon" type="button" data-cert data-name="CompTIA Security+" data-org="CompTIA" data-status="In progress">
-        <span class="badge">S+</span><span class="icon__label">Security+</span>
+        <span class="badge">S+</span><span class="icon__label">CompTIA Security+</span>
       </button>
       <button class="icon" type="button" data-cert data-name="[CISCO CERT]" data-org="Cisco" data-status="In progress">
         <span class="badge">CC</span><span class="icon__label">Cisco</span>
@@ -94,6 +94,8 @@
       <div class="w98__title"><span id="t-cert">cert</span><button class="w98-btn w98-btn--x" type="button" data-close="win-cert" aria-label="Close">×</button></div>
       <div class="cert">
         <span class="badge badge--big" id="cert-badge"></span>
+        <!-- Official CompTIA logo, shown only for earned certs. CompTIA rules: white background, clear space, unaltered, at least 5/8 in wide -->
+        <div class="cert__logo" id="cert-logo" hidden><img id="cert-logo-img" src="" alt=""></div>
         <div class="cert__info">
           <strong class="cert__name" id="cert-name"></strong>
           <span>Issued by: <span id="cert-org"></span></span>

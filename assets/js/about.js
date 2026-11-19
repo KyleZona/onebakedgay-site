@@ -34,7 +34,7 @@ document.addEventListener('click', (event) => {
 
   if (el.hasAttribute('data-cert')) {
     const earned = el.dataset.earned === 'true';
-    byId('t-cert').textContent = el.querySelector('.icon__label').textContent.replace(/ /g, '_') + '.cert';
+    byId('t-cert').textContent = el.querySelector('.icon__label').textContent.trim().replace(/ /g, '_') + '.cert';
     byId('cert-name').textContent = el.dataset.name;
     byId('cert-org').textContent = el.dataset.org;
     byId('cert-status').textContent = el.dataset.status;
@@ -42,6 +42,14 @@ document.addEventListener('click', (event) => {
     const badge = byId('cert-badge');
     badge.textContent = el.querySelector('.badge').textContent;
     badge.classList.toggle('badge--earned', earned);
+    // Earned certs with an official logo show the logo instead of the badge
+    const logo = el.dataset.logo;
+    byId('cert-logo').hidden = !logo;
+    badge.hidden = Boolean(logo);
+    if (logo) {
+      byId('cert-logo-img').src = logo;
+      byId('cert-logo-img').alt = el.dataset.logoAlt || '';
+    }
     setOpen('win-cert', true);
   }
 });
