@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Accessibility — OneBakedGay</title>
+  <meta name="description" content="I want everyone to be able to use this site. Here's what's in place and how to tell me if something doesn't work.">
+  <link rel="icon" href="assets/img/ky-cam.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;700&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/notes.css">
+</head>
+<body class="notes-page">
+
+  <header class="site-header">
+    <a class="logo" href="index.html"><img src="assets/img/obg-logo-white.png" alt="OneBakedGay home"></a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="index.html">HOME</a>
+      <a href="about.html">ABOUT</a>
+      <a href="projects.html">PROJECTS</a>
+      <a class="btn btn--pink" href="https://www.tiktok.com/">WATCH LIVE</a>
+    </nav>
+  </header>
+
+  <main>
+    <article class="post">
+      <header class="post__head">
+        <h1 class="post__title">Accessibility</h1>
+        <p class="post__summary">I want everyone to be able to use this site. Here's what's in place and how to tell me if something doesn't work.</p>
+        <div class="byline"><div><span>Last updated November 19, 2026</span></div></div>
+      </header>
+      <div class="post__body">
+        <div class="prose">
+          <h2>What's in place</h2>
+          <ul>
+            <li>Photos and images have text descriptions for screen readers.</li>
+            <li>Everything can be used with a keyboard. On the About page, pop-up windows move focus inside when they open, and the <code>Esc</code> key closes them.</li>
+            <li>Form fields have labels.</li>
+            <li>If your device is set to reduce motion, the scrolling banner, blinking cursors and other animations stop.</li>
+            <li>Pages adapt to phones, tablets and desktops, and text can be zoomed.</li>
+          </ul>
+
+          <h2>Known limits</h2>
+          <ul>
+            <li>The Windows 98 and terminal styles use retro pixel and monospace fonts in some places, which can be harder to read at small sizes.</li>
+            <li>The Now Playing and Playing windows update automatically every 30 seconds.</li>
+            <li>Content from other services, such as TikTok, isn't something I control.</li>
+          </ul>
+
+          <h2>Tell me if something doesn't work</h2>
+          <p>If anything on the site is hard to use with your setup, please let me know through the <a href="about.html">Say hi</a> form. Tell me the page and what happened, and I'll work on a fix.</p>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div style="display: flex; align-items: center; gap: 16px">
+      <a class="logo" href="index.html"><img src="assets/img/obg-logo-white.png" alt="OneBakedGay home"></a>
+      <span style="color: #8F8F8F">© 2026 OneBakedGay</span>
+    </div>
+    <nav aria-label="Social">
+      <a href="https://www.tiktok.com/">TIKTOK</a>
+      <a href="about.html">CONTACT</a>
+    </nav>
+    <div class="legal"><a href="privacy.html">Privacy</a><a href="accessibility.html">Accessibility</a></div>
+  </footer>
+</body>
+</html>
