@@ -127,3 +127,8 @@
 @media (max-width: 600px) {
   .win-photo1, .win-photo2 { display: none; }
 }
+
+/* PHONES: centre the OBG logo (photo O + BG) */
+@media (max-width: 600px) {
+  .hero__logo { justify-content: center; }
+}
